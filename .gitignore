@@ -1,3 +1,15 @@
+# Ignore datasets
+data/
+*.csv
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore virtual environment
+venv/
+.env/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
