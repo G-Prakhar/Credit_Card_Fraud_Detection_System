@@ -1,5 +1,7 @@
 # 🛡️ Fraud Detection System
 
+## Step 1: Define the Problem
+
 ---
 
 ### 🔍 What is Fraud?
@@ -59,5 +61,30 @@ To consider the project successful:
 > Build a machine learning system that detects fraudulent credit card transactions.  
 > The system should prioritize **high recall** to minimize missed frauds, while keeping false positives under control.  
 > The solution should be scalable and capable of real-time prediction.
+
+---
+
+## Step 2: Collect the Data
+
+For this project, I’m using the **Credit Card Fraud Detection dataset** from Kaggle.  
+It’s a well-known benchmark dataset for fraud detection tasks and works perfectly for building an end-to-end pipeline.
+
+---
+
+### 📂 Dataset Source
+- Dataset: [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)  
+- File: `creditcard.csv`  
+
+I downloaded the dataset and placed it in a local `data/` folder for easy access.  
+This keeps my project structure organized and avoids cluttering the main directory.
+
+---
+
+### 🚫 Git Ignore Setup
+Since raw datasets can be large and shouldn’t be pushed to GitHub:
+- I added the `data/` folder to `.gitignore`.  
+- This ensures the dataset stays local while the codebase remains clean.  
+
+Example entry in `.gitignore`:
 
 ---
