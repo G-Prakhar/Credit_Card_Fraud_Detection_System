@@ -1,58 +1,63 @@
-# Credit Card Fraud Detection
-
-## Dataset
-
-This project uses the [Credit Card Fraud Detection dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud).
-
-1. Download the dataset from Kaggle.
-2. Place the file inside the `data/` folder with the name `creditcard.csv`.
-
-## What is Fraud?
-
-Fraud refers to any intentional act of deception carried out to gain an unfair or unlawful advantage. In financial systems, this can include:
-
-- **Credit card fraud**
-- **Identity theft**
-- **Fake transactions**
-- **Money laundering**
-- **Insurance or loan fraud**
-
-Fraud not only causes **financial losses** but also damages **trust** in businesses, banks, and digital platforms.
+# 🛡️ Fraud Detection System
 
 ---
 
-## Why is Fraud Detection Important?
-
-- 💰 **Financial Protection** – Prevents monetary losses for individuals, banks, and companies.  
-- 🔒 **Security & Trust** – Builds confidence among users in digital payment systems.  
-- ⚖️ **Regulatory Compliance** – Helps organizations meet government and financial regulations.  
-- ⚡ **Early Intervention** – Detecting fraud in real-time can stop large-scale damage before it spreads.
+### 🔍 What is Fraud?
+Fraud refers to **unauthorized or deceptive financial transactions** that cause monetary loss to businesses or customers.  
+Examples include stolen credit cards, fake accounts, and abnormal purchases.
 
 ---
 
-## 📊 Evaluation Metrics  
+### ⚠️ Why is Fraud Detection Important?
+- Fraud cases are **rare but costly**, making them hard to spot.  
+- A fraud detection model that isn’t accurate can lead to:
+  - Missed frauds → huge financial loss.  
+  - Too many false alarms → frustrated customers.  
+- Detecting fraud quickly helps save money, protect trust, and keep systems secure.
 
-Fraud detection is an **imbalanced classification problem**, so metrics beyond accuracy are critical. Below are the key metrics we use and their target thresholds:  
+---
 
-- **Precision (≥ 90%)**  
-  - Ensures that the majority of transactions flagged as fraud are truly fraudulent.  
-  - Reduces false alarms and improves user trust.  
+### 📊 What Metrics Matter (and Why)?
+Accuracy alone isn’t enough. In fraud detection, the following metrics matter most:
 
-- **Recall (≥ 80%)**  
-  - Ensures that most fraudulent transactions are caught.  
-  - Prevents fraudsters from slipping through undetected.  
+- **Recall (True Positive Rate)** → Must be high, because missing a fraud is very expensive.  
+- **Precision** → Important to reduce false alarms.  
+- **F1-score** → Balances recall and precision.  
+- **ROC-AUC** → Evaluates how well the model separates fraud vs. non-fraud.  
 
-- **F1-Score (≥ 85%)**  
-  - Harmonic mean of precision and recall.  
-  - Balances catching fraud with minimizing false positives.  
+✅ Focus will be on **Recall and F1-score**.
 
-- **ROC-AUC (≥ 0.90)**  
-  - Evaluates the model’s ability to distinguish between fraud and non-fraud.  
-  - Higher AUC = better overall performance.  
+---
 
-- **Latency (≤ 200ms per transaction)**  
-  - The pipeline should flag fraud in near **real-time**.  
-  - Critical for production deployment in financial systems.  
+### 📥 Dataset Features & Target
 
-⚠️ **Note:** Accuracy is not emphasized here because fraud datasets are highly imbalanced (e.g., 99% genuine vs. 1% fraud). A model predicting “no fraud” for everything would show 99% accuracy but be useless in practice.  
+| **Feature Name** | **Type**     | **Description**                          |
+|------------------|--------------|------------------------------------------|
+| `Time`           | Numeric      | Seconds elapsed between each transaction |
+| `Amount`         | Numeric      | Value of the transaction                 |
+| `V1 … V28`       | Numeric      | Anonymized PCA-transformed features      |
+| `Class` (Target) | Categorical  | 0 = Legitimate, 1 = Fraudulent           |
 
+---
+
+### 🎯 Target Metrics & Thresholds
+To consider the project successful:
+- **Recall ≥ 0.80** (catch at least 80% of frauds)  
+- **F1-score ≥ 0.85** (balance precision & recall)  
+
+---
+
+### ⚡ Constraints & Assumptions
+- Dataset is **highly imbalanced** (fraud cases ~0.17%).  
+- Fraud patterns evolve → model must be updated over time.  
+- In the real world, the system needs **real-time predictions**.  
+- For this project, we assume access to the Kaggle Credit Card Fraud Detection dataset.  
+
+---
+
+### 🧾 Problem Statement
+> Build a machine learning system that detects fraudulent credit card transactions.  
+> The system should prioritize **high recall** to minimize missed frauds, while keeping false positives under control.  
+> The solution should be scalable and capable of real-time prediction.
+
+---
