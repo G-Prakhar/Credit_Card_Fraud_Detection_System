@@ -1,0 +1,20 @@
+# Core
+numpy
+pandas
+
+# Visualization
+matplotlib
+seaborn
+
+# Machine Learning
+scikit-learn
+imbalanced-learn   # for handling class imbalance (SMOTE, etc.)
+xgboost
+lightgbm
+
+# Model Explainability
+shap
+
+# Jupyter Notebook
+notebook
+ipython
